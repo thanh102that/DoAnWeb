@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "TrangQuanLyNhom";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+@using Web.Models;
+@model IEnumerable<Web.Models.Nhom>
+
+
+
+<div class=" container-fuild" style="margin-left: 20px">
+
+    <div class="row">
+        <div class="col-md-3" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px">
+            <a class="btn btn-outline-success btn-block"  href="@Url.Action("Them","QuanLy")"  style="text-align:center;width:200px ; height:50px" >Tạo Sản Phẩm Mới </a>
+        </div>
+        <div class="col-md-3" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px">
+            <a class="btn btn-outline-success btn-block" href="@Url.Action("TrangQuanLyNhom","QuanLyNhom")"  style="text-align:center;width:200px ; height:50px" >Chỉnh Sửa Nhóm </a>
+        </div>
+         <div class="col-md-3" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px">
+            <a class="btn btn-outline-success btn-block" href="@Url.Action("TrangQuanLyLoai","QuanLyLoai")"  style="text-align:center;width:200px ; height:50px" >Chỉnh Sửa Loại </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px">
+              <a class="btn btn-outline-success btn-block"  href="@Url.Action("ThemNhom","QuanLyNhom")"  style="text-align:center;width:200px ; height:50px" >Tạo Nhóm Mới </a>
+        </div>
+     </div>
+
+    @*@Html.ActionLink("Create New", "Them")*@
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th style="width: 100px">
+                    <p @Html.DisplayNameFor(model => model.maNhom)>Mã nhóm</p>
+                </th>
+                <th style="width: 200px">
+                    <p @Html.DisplayNameFor(model => model.tenNhom)>Tên nhóm</p>
+             </th>
+                <th style="width: 100px">
+                    <p @Html.DisplayNameFor(model => model.hinhanhdaidien)>Hình ảnh</p>
+
+                </th>                   
+                <th style="width: 350px">
+                    <p>Hoạt động</p>
+                </th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+    {
+                <tr>
+                    <td style="width: 100px">
+                        @Html.DisplayFor(modelItem => item.maNhom)
+                    </td>
+                    <td style="width: 200px">
+                        @Html.DisplayFor(modelItem => item.tenNhom)
+                    </td>
+                   
+                    <td style="width: 100px">
+                        @Html.DisplayFor(modelItem => item.hinhanhdaidien)
+                    </td>
+               
+                   
+                    <td style="width: 350px">
+                        @*<p><a href="@Url.Action("ThemNhom" ,new { ms= @item.maNhom})">Thêm Nhóm </a></p>*@
+                        <p><a href="@Url.Action("xoaNhom" ,new { ms = item.maNhom } )">Xóa Nhóm</a></p>
+                        <p><a href="@Url.Action("SuaNhom" ,new { id = item.maNhom } )">Sửa Nhóm</a>  </p>                                             
+                    </td>
+
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+    }
+
+        </tbody>
+
+
+    </table>
+
+
+</div>

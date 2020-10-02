@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "ThemNhom";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row" style="margin-top:20px; margin-bottom:20px; background-color:#0ff">
+        <div class="container">
+            <label style="text-align:center ;font-size:50px;font-family:cursive"> Thêm Nhóm</label>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container">
+    <form action="ThemNhom" method="post" enctype="multipart/form-data">
+  
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                       <label>Tên Nhóm</label>
+                    </div>
+
+                    <div >
+                          <input class="form-control" name="txtTenNhom" type="text" style="width:300px" placeholder="Tên Nhóm"/>                   
+                    </div>
+      </div>
+   
+          <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                    <label>Hình Ảnh Nhóm</label>
+                    </div>
+
+                    <div >
+                         <input name="fileUpLoad" type="file" style="width:300px"/>              
+                    </div>
+      </div>
+   
+    
+  
+    <div class="container">
+        <div class="row">         
+                 <input type="submit" value="Thêm Nhóm" class="btn btn-outline-success btn-block" style="width:200px; height:50px; margin-bottom:20px"/>
+            </div>
+              <div class="row">
+                  <a class="btn btn-outline-success btn-block" style="width:200px; height:50px; margin-bottom:20px; margin-top:20px;text-align:center" href="@Url.Action("TrangQuanLyNhom","QuanLyNhom")">Quay Lại</a>
+              </div>
+    </div> 
+    
+</form>
+
+</div>

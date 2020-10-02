@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "ThemLoai";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row" style="margin-top:20px; margin-bottom:20px; background-color:#0ff">
+        <div class="container">
+            <label style="text-align:center ;font-size:50px;font-family:cursive"> Thêm Loại</label>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container">
+    <form action="ThemLoai" method="post" enctype="multipart/form-data">
+  
+    <div class="form-row">
+        <div class="form-group col-md-2"style="text-align:right">
+            <label>Mã Nhóm </label>
+        </div>
+        <div class="form-group col-md-5">
+             @Html.DropDownList("maNhom", (IEnumerable<SelectListItem>)ViewBag.XXX)
+        </div>
+    </div>
+    @* <div class="form-row">
+        <div class="form-group col-md-2"style="text-align:right">
+            <label>Mã Nhóm </label>
+        </div>
+        <div class="form-group col-md-5">
+             @Html.DropDownList("maNhom", (IEnumerable<SelectListItem>)ViewBag.XXX)
+        </div>
+    </div>*@
+     
+           <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                       <label>Tên Loại</label>
+                    </div>
+
+                    <div >
+                          <input class="form-control" name="txtTenLoai" type="text" style="width:300px" placeholder="Tên Loại"/>                   
+                    </div>
+      </div>
+    
+  
+    <div class="container">
+        <div class="row">         
+                 <input type="submit" value="Thêm Loại" class="btn btn-outline-success btn-block" style="width:200px; height:50px; margin-bottom:20px"/>
+            </div>
+              <div class="row">
+                  <a class="btn btn-outline-success btn-block" style="width:200px; height:50px; margin-bottom:20px; margin-top:20px;text-align:center" href="@Url.Action("TrangQuanLyLoai","QuanLyLoai")">Quay Lại</a>
+              </div>
+    </div> 
+    
+</form>
+
+</div>
+

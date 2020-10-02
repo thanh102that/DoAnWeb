@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+     <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+     <div class="nav navbar" style="background-color: #ff6a00">
+        <div class="navbar navbar-expand-sm">
+            <ul class="nav mr-auto">
+                <li class="nav bg-ligth">
+                    <a class="nav-link" style="color: white" href="#">Tải ứng dụng </a>
+                    <a class="nav-link" style="color: white" href="#">|</a>
+                    <a class="nav-link" style="color: white" href="#">Kết nối</a>
+                    <a class="nav-link" href="#">
+                        <img src="~/Content/Image/hinhFB.JPG" style="width: 20px; height: 20px" />
+                    </a>
+                    <a class="nav-link" href="#">
+                        <img src="~/Content/Image/hinhIn.JPG" style="width: 20px; height: 20px" />
+                    </a>
+                    <a class="nav-link" style="color: white" href="#">|</a>
+                    <a class="nav-link" style="color:white" href="@Url.Action("SanPham","TrangChu")">Sản Phẩm</a>
+                    <a class="nav-link" style="color: white" href="#">|</a>
+                    <a class="nav-link" style="color:white" href="@Url.Action("NhaCungCap","TrangChu")">Nhà cung cấp </a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-brand">
+            <ul class="nav mr-auto">
+                <li class="nav bg-ligth">
+                    <a class="nav-link" style="color: white" href="#">Thông Báo</a>               
+                     @if (Session["dn"] != null) {                             
+                         <a class="nav-link" href="#" style="color:blue"> Chào bạn @Session["dn"]</a> 
+                              <a class="nav-link" style="color:white" href="@Url.Action("XLDangXuat","DangKy")">Đăng Xuất</a>
+                        }
+                         @if (Session["dn"] == null)
+                         {
+                          <a class="nav-link" style="color:white" href="@Url.Action("DangNhap","DangKy")">Đăng Nhập</a>                       
+                           <a class="nav-link" style="color:white" href="@Url.Action("DangKy","DangKy")">Đăng Ký</a>
+                         }
+                    
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div class="nav navbar" style="background-color: #ff6a00">
+        <div class="navbar-brand ">
+            <h3><a class="nav-link" style="color:white; font:bold ; text-align:center" href="@Url.Action("TrangChu","TrangChu")">SHOPP | GIỎ HÀNG </a></h3>
+         
+        </div>
+        <div class="form-inline">
+            <input class="l-radius" type="text" style="width: 500px; height: 40px" placeholder="Tìm kiếm..." />
+            <a class="btn btn-primary l-radius">Tìm kiếm </a>
+        </div>
+
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+     <div class="divider" style="background-color:#ff6a00; height:5px; margin-bottom:3px; margin-top:20px"></div>
+
+    <footer class="footer-section bg-with-black" style="background-color:#ff6a00 ;color:white">
+        <div class="footer-top-section">
+            <div class="container" style="background-color:#ff6a00">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-fta">
+                         <h4 class="fta-title"> Chăm Sóc Khách Hàng</h4>
+                            <ul class="fta-list" >
+                                <li><a href="#" style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Trung Tâm Trợ Giúp</a></li>
+                                <li><a href="#" style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Hướng Dẫn Mua Hàng</a></li>
+                                <li><a href="#"style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Vận Chuyển</a></li>
+                                <li><a href="#"style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Trả Hàng & Hoàn Tiền</a></li>
+                                <li><a href="#"style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Chăm Sóc Khách Hàng</a></li>
+                                <li><a href="#"style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Chính Sách Bảo Hành</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-fta">
+                         <h4 class="fta-title"> Về SHOPP</h4>
+                            <ul class="fta-list">
+                                <li><a href="#" style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Giới Thiệu Về SHOPP Việt Nam</a></li>
+                                <li><a href="#"style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Tuyên Dụng</a></li>
+                                <li><a href="#"style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Điều Khoản SHOPP</a></li>
+                                <li><a href="#"style="color:black"><span class="glyphicon glyphicon-chevron-right"></span> Chính Sách Bảo Mật</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-fta">
+                            <h4 class="fta-title">Theo Dõi Chúng Tôi Trên</h4>
+                            <ul class="fta-list">
+                                 <li><a href="#"style="color:black"><i class="fa fa-square"></i>FaceBook</a></li>
+                                <li><a href="#"style="color:black"><i class="fa fa-square"></i>Instagram</a></li>
+                                <li><a href="#"style="color:black"><i class="fa fa-square"></i>Linkedln</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                  @*  <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="single-fta">
+                            <h3 class="fta-title">Contact Us</h3>
+                            <ul class="fta-list">
+                                <li>Address: 8th floor, 379 Hudson St, New York, NY 10018</li>
+                                <li>Phone: (+1) 96 716 6879</li>
+                                <li>Email: contact@site.com</li>
+                            </ul>
+                        </div>
+                    </div>*@
+                    
+                </div>
+            </div>
+        </div>
+         <div class="divider" style="background-color:#fff; height:1px; margin-bottom:3px; margin-top:20px"></div>
+
+        <div class="footer-bottom-area" style="background-color:#ed7016">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="footer-bottom">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="fba-copyright">
+                                        <p> 2019 SHOPP. Tất cả các quyền được bảo lưu. </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                   <div class="single-fta">
+                                        <h4 class="fta-title">Tai Ứng Dụng Ngay </h4>
+                                        <ul class="fta-list">
+                                             <li><a href="#" style="color:black"><i class="fa fa-square"></i>Quét QR code tại đây</a></li>
+                                            <li><a href="#"style="color:black"><i class="fa fa-square"></i>App Store</a></li>
+                                            <li><a href="#"style="color:black"><i class="fa fa-square"></i>Google Play</a></li>
+                                      
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+ 
+</body>
+</html>

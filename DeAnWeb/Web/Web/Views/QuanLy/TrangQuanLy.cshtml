@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "TrangQuanLy";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+@using Web.Models;
+@model IEnumerable<Web.Models.sanPham>
+
+<div class=" container-fuild" style="margin-left:20px">
+     
+        <div class="row">
+            <div class="col-md-3" style="margin-top:20px; margin-bottom:20px ; margin-left:2px">
+                 <a class="btn btn-outline-success btn-block"  href="@Url.Action("Them","QuanLy")"  style="text-align:center;width:200px ; height:50px" >Tạo Sản Phẩm Mới </a>
+            </div>
+             <div class="col-md-3" style="margin-top:20px; margin-bottom:20px ; margin-left:2px">
+                   <a class="btn btn-outline-success btn-block" href="@Url.Action("TrangQuanLyNhom","QuanLyNhom")"  style="text-align:center;width:200px ; height:50px" >Chỉnh Sửa Nhóm </a>
+             </div>
+             <div class="col-md-3" style="margin-top: 20px; margin-bottom: 20px; margin-left: 2px">
+            <a class="btn btn-outline-success btn-block" href="@Url.Action("TrangQuanLyLoai","QuanLyLoai")"  style="text-align:center;width:200px ; height:50px" >Chỉnh Sửa Loại </a>
+            </div>
+        </div>
+   
+    
+
+    @*@Html.ActionLink("Create New", "Them")*@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+          <th style="width:20px">     
+            <p @Html.DisplayNameFor(model => model.maSP)> Mã sản phẩm</p>
+        </th>
+        <th style="width:180px">
+            <p @Html.DisplayNameFor(model => model.tenSP)> Tên sản phẩm</p>
+        </th>
+        <th style="width:50px">
+            <p  @Html.DisplayNameFor(model => model.dongia)> Đơn giá sản phẩm</p>
+           
+        </th>
+        <th style="width:600px">
+            <p  @Html.DisplayNameFor(model => model.mota)> Mô tả sản phẩm </p>
+           
+        </th>
+        <th style="width:50px">
+            <p @Html.DisplayNameFor(model => model.hinhanh)> Hình ảnh</p>
+            
+        </th>
+        <th style="width:30px">
+            <p  @Html.DisplayNameFor(model => model.maLoai)>  Mã loại </p>
+           
+        </th>
+        <th style="width:100px">
+            <p   @Html.DisplayNameFor(model => model.maNCC) > Mã nhà cung cấp</p>
+          
+        </th>   
+        <th style="width:250px" >
+            <p> Hoạt động</p>
+        </th>
+    </tr>
+
+    </thead>
+    
+    <tbody>
+          @foreach (var item in Model)
+    {
+        <tr>
+              <td style="width:20px">              
+                @Html.DisplayFor(modelItem => item.maSP)
+            </td>
+            <td style="width:180px">
+                @Html.DisplayFor(modelItem => item.tenSP)
+            </td>
+            <td style="width:50px">
+                @Html.DisplayFor(modelItem => item.dongia)
+            </td>
+            <td style="width:600px; height:300px">
+                @Html.DisplayFor(modelItem => item.mota)
+            </td>
+
+            <td style="width:50px">
+                @Html.DisplayFor(modelItem => item.hinhanh)
+            </td>
+            <td style="width:20px">
+                @Html.DisplayFor(modelItem => item.maLoai)
+            </td>
+            <td style="width:100px">
+                @Html.DisplayFor(modelItem => item.maNCC)
+            </td>
+            <td style="width:250px">
+               <p> <a href="@Url.Action("suaSP" ,new { id = item.maSP } )">Sửa Sản Phẩm</a>  </p>
+           <p>   <a href="@Url.Action("ChiTietSanPham" ,"TrangChu",new { ms= @item.maSP})">Chi Tiết Sản Phẩm </a> </p>
+            <p> <a href="@Url.Action("xoaSanPham" ,new { ms = item.maSP } )">Xóa Sản Phẩm</a></p>
+
+            </td>
+
+            <td> <br /></td>
+        </tr>
+    }
+
+    </tbody>
+  
+
+</table>
+
+
+</div>

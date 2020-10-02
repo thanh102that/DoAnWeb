@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "HienThiLoai";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+@using Web.Models;
+@model List<Loai>
+
+
+@*<div class="container-fluid mt-1">
+<div class="nav bg-ligth ">
+    <div class="card-group ">
+      <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-2 " style="width:150px; height: 100px">
+                    <div class="card ">                    
+                        <div class="card-body bg-dark">   
+                            <p class="card-title ">
+                                <a href="#">@item.tenloai</a>
+                            </p>                                               
+                        </div>
+                    </div>
+                </div>         
+            }
+   </div>
+</div>
+   </div>
+</div>*@
+<div class="container" style="margin-top:20px">
+<div class="nav bg-ligth ">
+    <div class="card-group ">
+      <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-2 " style="width:520px; height: 100px">
+                    <div class="card ">     
+                         @*<img class="card-img-top" style="width:150px;height:100px" src="~/Content/image/@item.hinhanhdaidien" />*@                 
+                        <div class="card-body bg-light">   
+                            <p class="card-title ">
+                                <a class="nav-link" href="@Url.Action("SanPhamLoai",new {ms = @item.maLoai})">@item.tenloai</a>
+                            </p>                                               
+                        </div>
+                    </div>
+                </div>         
+            }
+   </div>
+</div>
+   </div>
+</div>
+@* hiện toàn bộ sản phẩm *@
+    @Html.Action("SanPhamAll")
+
+
+@*<a class="dropdown-item" href="@Url.Action("Index",new{id=@l.maloai})">@l.tenloai</a>*@

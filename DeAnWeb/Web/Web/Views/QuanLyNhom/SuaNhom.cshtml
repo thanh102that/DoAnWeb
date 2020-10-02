@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "SuaNhom";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+
+@using Web.Models;
+@model Nhom
+<div class="container-fluid">
+    <div class="row" style="margin-top:20px; margin-bottom:20px; background-color:#0ff">
+        <div class="container">
+            <label style="text-align:center ;font-size:50px;font-family:cursive"> Sửa Sản Phẩm</label>
+        </div>
+        
+    </div>
+</div>
+
+    
+<div class="container">
+    <form action="@Url.Action("SuaNhom", new { id=@Model.maNhom })" method="post" enctype="multipart/form-data">
+
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                      <label>Tên Nhóm</label>
+                    </div>
+
+                    <div >
+                          <input class="form-control" name="txtTenNhom" type="text" style="width:300px" value="@Model.tenNhom"/>                   
+                    </div>
+      </div>
+
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                       <label>Ảnh Sản Phẩm</label>
+                    </div>
+
+                    <div >
+                          <input name="fileUpLoad" type="file" value="@Model.hinhanhdaidien"  />
+                             <img src="@Url.Content("~/Content/Image/" + Model.hinhanhdaidien)" style="width:300px" />(Ảnh hiện tại)            
+                    </div>
+      </div>
+   
+  
+    <div class="container">
+        <div class="row">         
+                 <input type="submit" value="Lưu Nhóm" class="btn btn-outline-success btn-block" style="width:200px; height:50px; margin-bottom:20px; text-align:center"/>
+            </div>
+              <div class="row">
+                  <a class="btn btn-outline-success btn-block" style="width:200px; height:50px; margin-bottom:20px; margin-top:20px;text-align:center" href="@Url.Action("TrangQuanLyNhom","QuanLyNhom")">Quay Lại</a>
+
+              </div>
+    </div> 
+        
+</form>
+</div>
+

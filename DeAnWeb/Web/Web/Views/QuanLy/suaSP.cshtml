@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "suaSP";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+@using Web.Models;
+@model sanPham
+<div class="container-fluid">
+    <div class="row" style="margin-top:20px; margin-bottom:20px; background-color:#0ff">
+        <div class="container">
+            <label style="text-align:center ;font-size:50px;font-family:cursive"> Sửa Sản Phẩm</label>
+        </div>
+        
+    </div>
+</div>
+
+
+    
+<div class="container">
+    <form action="@Url.Action("suaSP", new { id=@Model.maSP })" method="post" enctype="multipart/form-data">
+
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                      <label>Tên Sản Phẩm</label>
+                    </div>
+
+                    <div >
+                          <input class="form-control" name="txtTenSP" type="text" style="width:300px" value="@Model.tenSP"/>                   
+                    </div>
+      </div>
+
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                       <label>Giá Sản Phẩm</label>
+                    </div>
+
+                    <div >
+                          <input class="form-control" name="txtDonGia" type="text" style="width:300px" value="@Model.dongia"/>                   
+                    </div>
+      </div>
+
+
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                        <label>Mô Tả Sản Phẩm</label>
+                    </div>
+
+                    <div >
+                          <input class="form-control" name="txtMoTa" type="text" style="width:300px" value="@Model.mota"/>                   
+                    </div>
+      </div>
+
+
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                       <label>Ảnh Sản Phẩm</label>
+                    </div>
+
+                    <div >
+                          <input name="fileUpLoad" type="file" value="@Model.hinhanh"  />
+                             <img src="@Url.Content("~/Content/Image/" + Model.hinhanh)" style="width:300px" />(Ảnh hiện tại)            
+                    </div>
+      </div>
+  
+    
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                      <label>Mã Loại Sản Phẩm</label>
+                    </div>
+
+                    <div >
+                         @Html.DropDownList("maLoai", (IEnumerable<SelectListItem>)ViewBag.XXX)      
+                    </div>
+      </div>
+
+
+     <div class="form-group" style="border: medium">
+                    <div  style="text-align: left">
+                        <label>Mã Nhà Cung Câp</label>
+                    </div>
+
+                    <div >
+                          @Html.DropDownList("maNCC", (IEnumerable<SelectListItem>)ViewBag.XXX)
+                    </div>
+      </div>
+  
+
+  
+    <div class="container">
+        <div class="row">         
+                 <input type="submit" value="Lưu Sản Phẩm" class="btn btn-outline-success btn-block" style="width:200px; height:50px; margin-bottom:20px; text-align:center"/>
+            </div>
+              <div class="row">
+                  <a class="btn btn-outline-success btn-block" style="width:200px; height:50px; margin-bottom:20px; margin-top:20px;text-align:center" href="@Url.Action("TrangQuanLy","QuanLy")">Quay Lại</a>
+
+              </div>
+    </div> 
+        
+</form>
+</div>
+
+
+            
+         
+   
+
+

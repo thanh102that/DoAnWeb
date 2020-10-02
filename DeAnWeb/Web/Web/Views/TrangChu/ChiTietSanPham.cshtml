@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+
+@using Web.Models;
+@model sanPham
+
+<div class="container" style="margin-top:30px"> 
+    <div class="row" style="margin-top:20px">
+    <div class="col-md-5" style="border:thin" >
+        <div class="border-right border-info">
+             <img src="~/Content/image/@Model.hinhanh" style="margin-left:10px ; width:400px; height:300px"/>
+        </div>
+       
+    </div>
+    <div class="col-md-7">
+        <p style="text-align:left ;font-weight:bold">
+           Tên Sản Phẩm: @Model.tenSP
+        </p>
+        
+         <p>Thông tin liên hệ : @Model.nhaCungCap  </p> 
+        <p>Trị giá: @Model.dongia</p>
+           <p>@Model.mota </p> 
+    <a href="@Url.Action("ThemGioHang", "GioHang", new { ms = @Model.maSP })" class="btn btn-danger">Chọn mua</a>
+    </div>
+</div>
+
+</div>
+
+
+<div class="container " style="margin-top:20px">
+    
+        <div class="row">
+            <div class="col_md-3">
+                <a class="btn btn-block  btn-outline-info" href="@Url.Action("HienThiNhomView")"" style="width:100px ; height:50px;margin-right:20px;">Quay lại</a>
+            </div>
+            <div class="col-md-4">
+                 <a class="btn btn-block  btn-outline-info" href="@Url.Action("SanPham")" style="width:250px ; height:50px">Xem toàn bộ sản phảm</a>
+            </div>
+        </div>      
+    
+</div>
+

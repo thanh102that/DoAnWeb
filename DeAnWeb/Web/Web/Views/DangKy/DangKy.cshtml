@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+<div class="container" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 >Đăng ký miễn phí</h3>
+            <p>Dễ dàng truy cập lịch sử đơn hàng, lưu sản phẩm yêu thích, xem giỏ hàng, nhận ưu đãi và nhiều hơn nữa.</p>
+            <br />
+            <form action="@Url.Action("XLDangKy")" method="post">
+                <div class="form-row" style="border: medium">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Họ và Tên:</label>
+                    </div>
+
+                    <div class="form-group col-md-8">
+                       <input name="txtHoTen" class="form-control" type="text" placeholder="Họ Tên" /> 
+                    </div>
+                </div>
+                <div class="form-row" style="border: medium">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Tên đăng nhập:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input name="txtTenDN" class="form-control" type="text" placeholder="Tên Đăng Nhập"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4"  style="text-align: left">
+                        <label>Mật khẩu:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input name="txtMatKhau" class="form-control" type="password" placeholder="Pass"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Nhập lại mật khẩu:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input name="txtNhapLaiMK " class="form-control" type="password" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Email:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input name="txtEmail" class="form-control" type="text"placeholder="Email" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Địa chỉ:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input name="txtDiaChi" class="form-control" type="text" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Điện thoại :</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input name="txtDienThoai" class="form-control" type="text" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Ngày sinh:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input name="txtNgaySinh" class="form-control" type="date" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3" style="text-align: left">
+                    </div>
+                    <div class="form-group col-md-9">
+                        <input name="btnSubmit" type="submit" class="btn btn-primary" value=" Đăng Ký" />
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            @*<img src="~/Content/Image/anhchay8.JPG" />*@<img src="~/Content/Image/chayyyyy.JPG" />
+        </div>
+    </div>
+</div>

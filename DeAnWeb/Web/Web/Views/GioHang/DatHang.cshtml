@@ -1,0 +1,238 @@
+﻿@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_LayoutPageConLai.cshtml";
+}
+@using Web.Models;
+@model KhachHang
+<div>
+    @*<h3 style="color: red; text-align: center;">THÔNG TIN ĐẶT HÀNG</h3>*@
+</div>
+
+@*<div class="container" style="margin-top: 30px;">
+
+
+    <form action="@Url.Action("XLDatHang")" method="post">
+
+        <div class="form-row" style="border: medium">
+            <div class="form-group col-md-4" style="text-align: left">
+                <label>Tên Khách Hàng:</label>
+            </div>
+
+            <div class="form-group col-md-8">
+                @Model.tenKH
+            </div>
+        </div>
+        <div class="form-row" style="border: medium">
+            <div class="form-group col-md-4" style="text-align: left">
+                <label>Số Điện Thoại:</label>
+            </div>
+            <div class="form-group col-md-8">
+                @Model.sdtKhach
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4" style="text-align: left">
+                <label>Địa Chỉ:</label>
+            </div>
+            <div class="form-group col-md-8">
+                @Model.diachi
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4" style="text-align: left">
+                <label>Ngày đặt:</label>
+            </div>
+            <div class="form-group col-md-8">
+                @DateTime.Now.ToShortDateString()
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4" style="text-align: left">
+                <label>Ngày Giao:</label>
+            </div>
+            <div class="form-group col-md-8">
+                <input name="txtNgayGiao" type="date" />
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-3" style="text-align: left">
+            </div>
+            <div class="form-group col-md-9">
+                <input class="btn btn-block  btn-outline-info" name="btnSubmit" type="submit" value="Đặt Hàng" />
+
+            </div>
+
+        </div>
+    </form>
+</div>*@
+
+
+<div >
+    <h3 style="color:red; text-align:center;" > THÔNG TIN ĐẶT HÀNG</h3>
+</div>
+
+<div class="container" style="margin-top: 30px;">
+   
+    
+        <form action="@Url.Action("XLDatHang")" method="post">
+
+            <div class="form-row" style="border: medium">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Tên Khách Hàng:</label>
+                    </div>
+
+                    <div class="form-group col-md-8">
+                         @Model.tenKH
+                    </div>
+                </div>
+                <div class="form-row" style="border: medium">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Số Điện Thoại:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        @Model.sdtKhach
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4"  style="text-align: left">
+                        <label>Địa Chỉ:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        @Model.diachi
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Ngày đặt:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        @DateTime.Now.ToShortDateString()
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4" style="text-align: left">
+                        <label>Ngày Giao:</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                       <input name="txtNgayGiao" type="date" />
+                    </div>
+                </div>
+               
+                <div class="form-row">
+                    <div class="form-group col-md-3" style="text-align: left">
+                    </div>
+                    <div class="form-group col-md-9">
+                       <input class="btn btn-block  btn-outline-info" name="btnSubmit" type="submit" value="Đặt Hàng" />
+                       @* <a class="btn btn-block  btn-outline-info" href="@Url.Action("XacNhanDonHang", "GioHang")" style="width: 100px; height: 50px; margin-right: 20px;">Đặt Hàng</a>*@
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <div class="form-row">
+                <div class="form-group col-md-5" style="text-align: left">
+                    <div style="text-align: left">
+                        <label>Tên Khách Hàng</label>
+                    </div>
+
+                    <div class="form-group col-md-5">
+                        @Model.tenKH
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-5" style="text-align: left">
+                    <div style="text-align: left">
+                        <label>Số Điện Thoại</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                     @Model.sdtKhach    
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-5" style="text-align: left">
+                    <div style="text-align: left">
+                        <label>Địa Chỉ</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        @Model.diachi
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-5" style="text-align: left">
+                    <div style="text-align: left">
+                        <label>Ngày Đặt</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        @DateTime.Now.ToShortDateString()
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5" style="text-align: left">
+                    <div style="text-align: left">
+                        <label>Ngày Giao</label>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input name="txtNgayGiao" type="date" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3" style="text-align: left">
+                </div>
+                <div class="form-group col-md-9">
+                    <a class="btn btn-block  btn-outline-info" href="@Url.Action("XacNhanDonHang", "GioHang")" style="width: 100px; height: 50px; margin-right: 20px;">Đặt Hàng</a>
+                </div>
+
+            </div>
+        </form>
+</div>
+
+
+
+
+
+
+
+*@
